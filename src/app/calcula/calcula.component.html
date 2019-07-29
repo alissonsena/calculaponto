@@ -1,0 +1,61 @@
+<div *ngIf="exibirErro">
+  <p class="alert alert-danger text-justify" >
+    <span class="fa fa-thumbs-o-down"></span>
+    É sério isso!? Você quer o resultado ou ta só tirando onda? Preenche isso direito cara.
+  </p>  
+</div>
+
+<div class="row">
+  <div class="col-sm-2 form-group">
+    <label>Entrada:</label>
+    <input type="time" class="form-control" [(ngModel)]="entrada1" />
+  </div>
+  <div class="col-sm-2 form-group">
+    <label>Saída para almoço:</label>
+    <input type="time" class="form-control" [(ngModel)]="saidaAlmoco" />
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-2 form-group">
+    <label>Volta do almoço:</label>
+    <input type="time" class="form-control" [(ngModel)]="voltaAlmoco"/>
+  </div>
+  <div class="col-sm-2 form-group">
+    <label>Horário ideal de saída:</label>
+    <input type="time" class="form-control" [(ngModel)]="horarioSaida"/>
+  </div>
+  <div *ngIf="liberdade != null" class="col-sm-8 align-self-end">
+      <p class="alert alert-success text-justify" >
+          <span class="fa fa-hand-peace-o"></span>
+          Você estará liberto em: {{liberdade}}
+      </p>
+  </div>
+</div>
+<div class="clearfix"></div>
+<div class="form-actions">
+    <input type="button" value="Calcular" class="btn btn-primary" (click)="onClickCalcular()"/>
+    <input type="button" value="Limpar" class="btn btn-light" (click)="onClickLimpar()"/>
+</div>
+
+<div *ngIf="exibirHoraExtra">
+  <br />
+  <p *ngIf="horaExtra > 0" class="alert alert-warning text-justify" >
+    <span class="fa fa-clock-o"></span>
+    Total de Horas Extras: {{horaExtraFormatada}} <br />
+    Fazendo hora extra? Quem autorizou?
+  </p>  
+  <p *ngIf="horaExtra < 0" class="alert alert-danger text-justify" >
+      <span class="fa fa-clock-o"></span>
+      Horas Ausentes: -{{horaExtraFormatada}} <br />
+      Vai ficar devendo? Boa sorte.
+    </p>  
+</div>
+
+<div *ngIf="exibirTexto">
+  <hr />
+  <p class="alert alert-info text-justify" >
+    <span class="fa fa-money"></span>
+    Obrigado por utilizar nossos serviços. <br />
+    Agora deixe de ser mão de vaca e contribua (AG.: 0213 / C.C.: 01034913-3).
+  </p>  
+</div>

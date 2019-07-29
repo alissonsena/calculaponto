@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '../node_modules/font-awesome/css/font-awesome.css';
+
+.form-actions .btn, .form-actions button, .form-actions input[type=submit]{
+	margin-right: 20px;
+}
+
+#footer {
+    width: 100%;
+    display: block;
+    text-align: center;
+    color: rgb(150, 150, 150);
+    margin-top: 48px;
+    font-size: 11px;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-bottom: 1em;
+}
+
+.markdown-link {
+    background-color: transparent;
+    color: inherit;
+    text-transform: inherit;
+    letter-spacing: inherit;
+    text-align: inherit;
+    border-width: 0px;
+    padding: 0px;
+    margin: 0px;
+    font: inherit;
+    text-decoration: none;
+    outline: 0px;
+}
+
+.markdown-link:hover, .markdown-link:active, .markdown-link:focus {
+    text-decoration: underline;
+}
