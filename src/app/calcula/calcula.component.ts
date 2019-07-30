@@ -19,6 +19,7 @@ export class CalculaComponent implements OnInit {
   exibirHoraExtra = false;
   exibirTexto = false;
   exibirErro = false;
+  exibirHoraAlmocoExcedida = false;
 
   dtEntrada:number;
   dtSaidaAlmoco:number;
@@ -37,6 +38,8 @@ export class CalculaComponent implements OnInit {
       } else {
         this.calcularHoraExtra();
       }
+      this.calcularHoraAlmocoExcedida();
+
       this.exibirTexto = true;
     }
     catch(e) {
@@ -44,6 +47,14 @@ export class CalculaComponent implements OnInit {
       this.exibirErro = true;
     }
   
+  }
+
+  calcularHoraAlmocoExcedida() {
+    this.exibirHoraAlmocoExcedida = false;
+    let result = new Date(this.dtSaidaAlmoco).getTime() - new Date(this.dtVoltaAlmoco).getTime();
+    if(result < -7200000){
+      this.exibirHoraAlmocoExcedida = true;
+    }
   }
 
   onClickLimpar() {
@@ -93,6 +104,7 @@ export class CalculaComponent implements OnInit {
     this.exibirErro = false;
     this.exibirHoraExtra = false;
     this.liberdade = null;
+    this.exibirHoraAlmocoExcedida = false;
   }
 
   private convertMinsToHrsMins(mins) {
