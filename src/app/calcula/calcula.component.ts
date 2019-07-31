@@ -92,8 +92,8 @@ export class CalculaComponent implements OnInit {
 
       this.horarioSaida = (dtSaida.getHours() < 10 ? '0' + dtSaida.getHours() : dtSaida.getHours()) 
                         + ':' + (dtSaida.getMinutes() < 10 ? '0' + dtSaida.getMinutes() : dtSaida.getMinutes());
-      let dataHoraAtual = new Date().setSeconds(0,0) - 3600000;
-      console.log(new Date(dataHoraAtual));
+      let dataHoraAtual = new Date().setSeconds(0,0);
+      console.log("Hora atual: " + new Date(dataHoraAtual));
       if(dataHoraAtual < dtSaida.getTime()) {
         this.liberdade = this.convertMinsToHrsMins((dtSaida.setSeconds(0,0) - dataHoraAtual)/60000);
       }
