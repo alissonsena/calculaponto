@@ -10,8 +10,8 @@ import { RouterModule } from '@angular/router';
 
 const appRoutes = [
     { path: '', component: CalculaComponent },
-    { path: 'calcula/termos', component: TermosComponent },
-    { path: 'calcula/politica', component: PoliticaComponent }
+    { path: 'termos', component: TermosComponent },
+    { path: 'politica', component: PoliticaComponent }
   ];
 
 @NgModule({
