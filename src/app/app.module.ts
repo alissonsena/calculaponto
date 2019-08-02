@@ -6,6 +6,13 @@ import { CalculaComponent } from './calcula/calcula.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TermosComponent } from './termos/termos.component';
 import { PoliticaComponent } from './politica/politica.component';
+import { RouterModule } from '@angular/router';
+
+const appRoutes = [
+    { path: 'calcula', component: CalculaComponent },
+    { path: 'calcula/termos', component: TermosComponent },
+    { path: 'calcula/politica', component: PoliticaComponent }
+  ];
 
 @NgModule({
   declarations: [
@@ -17,7 +24,8 @@ import { PoliticaComponent } from './politica/politica.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
