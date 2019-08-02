@@ -9,7 +9,7 @@ import { PoliticaComponent } from './politica/politica.component';
 import { RouterModule } from '@angular/router';
 
 const appRoutes = [
-    { path: 'calcula', component: CalculaComponent },
+    { path: '', component: CalculaComponent },
     { path: 'calcula/termos', component: TermosComponent },
     { path: 'calcula/politica', component: PoliticaComponent }
   ];
